@@ -61,10 +61,11 @@
         <hr>
     </header>
     @yield('content')
-    <footer>
+    <footer class="container bg-white">
         <br>
         <br>
         <div class="text-center">Copyright &copy; 2012 - 2016 CPS Mall. All Rights Reserved</div>
+        <br>
     </footer>
 </body>
 <script src="{{asset('/js/front.js')}}"></script>
