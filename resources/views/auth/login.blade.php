@@ -4,13 +4,13 @@
 <div class="container">
     <div class="row">
         @if(Auth::check())
-        <div class="alert alert-success"><span class="icon-ok"></span> 已经登陆。</div>
+        <div class="alert alert-success"><span class="icon-ok"></span> 已成功登陆。</div>
         @else
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">Login</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
+                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}?return={{$_GET['returnUrl'] or '%2F' }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">

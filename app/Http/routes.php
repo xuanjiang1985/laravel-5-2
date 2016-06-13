@@ -40,11 +40,15 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/cps/b','TestController@b');
     Route::get('/cps/c','TestController@c');
     Route::get('/jackcare', 'HomeController@jackcare');
+    //Auth 认证
+    Route::group(['middleware' => 'auth'], function(){
+        Route::get('/home2', 'HomeController@home2');
+    });
     //后台
     Route::get('/jackadmin/login','Admin\AdminController@getLogin');
     Route::post('/jackadmin/login','Admin\AdminController@postLogin');
 
-    Route::group(['middleware' => 'admin','prefix' => 'jackadmin'],function () {
+    Route::group(['middleware' => 'admin','prefix' => 'jackadmin'], function () {
         Route::get('/','Admin\AdminController@index')->name('admin');
         Route::get('/logout','Admin\AdminController@getLogout');
     });

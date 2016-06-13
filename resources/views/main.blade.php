@@ -26,7 +26,7 @@
                 <li><a href="/logout">退出登陆</a></li>
               </ul>
         @else
-        <a href="{{ url('/login') }}"><span class="icon-user"></span> 登陆</a>
+        <a href="javascript:;" id="login"><span class="icon-user"></span> 登陆</a>
         @endif
       </div>
       <div class="clearfix"></div>

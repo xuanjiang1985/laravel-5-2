@@ -27,18 +27,27 @@ class AuthController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
 
     /**
      * Create a new authentication controller instance.
      *
      * @return void
      */
+    //public $return;
+
     public function __construct()
     {
         $this->middleware('guest', ['except' => 'logout']);
+        if (isset($_GET['returnUrl'])) {
+            $return = $_GET['returnUrl'];
+        } else {
+            $return = '%2F';
+        }
+        
+        $this->redirectTo = urldecode($return);
     }
 
+    //protected $redirectTo = $return;
     /**
      * Get a validator for an incoming registration request.
      *
