@@ -31,4 +31,14 @@ class HomeController extends Controller
     {
         return redirect('/')->withErrors('你没有权限');
     }
+
+    public function home1()
+    {
+        return view('home1');
+    }
+
+    public function home2()
+    {
+        return view('home2');
+    }
 }
