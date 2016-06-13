@@ -20,7 +20,7 @@
     <header>
       <div id="cps-login">
         @if(Auth::check())
-        <a href="javascript:;" id="login-a"><span class="icon-user"></span> {{ Auth::user()->name }} <b class="caret"></b></a>
+        <a href="javascript:;" id="login-a"><span class="icon-user"></span> {{ Auth::user()->name }} <span class="icon-sort-down"></span></a>
               <ul id="cps-logout" class="hidden">
                 <li><a href="/setting">个人设置</a></li>
                 <li><a href="/logout">退出登陆</a></li>
@@ -36,11 +36,15 @@
            </div>
            <div>
             <br class="hidden-xs">
-              <ul class="nav navbar-nav" id="nav-u">
-                 <li><a href="#">供应商</a></li>
-                 <li><a href="#">新品图片</a></li>
+              <ul class="nav navbar-nav" id="nav-ul">
+                 <li><a href="/home1">供应商</a></li>
+                 <li><a href="/home2">新品图片</a></li>
                  <li><a href="#">叫外卖</a></li>
                  <li><a href="#">打卡</a></li>
+                 <li><a href="#">美女</a></li>
+                 <li><a href="#">生活馆</a></li>
+                 <li><a href="#">推油</a></li>
+                 <li><a href="#">桑拿</a></li>
                  <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                        快无边界<b class="caret"></b>

@@ -32,6 +32,8 @@ Route::group(['middleware' => 'web'], function () {
     });
     Route::auth();
     Route::get('/home', 'HomeController@index');
+    Route::get('/home1', 'HomeController@home1');
+    Route::get('/home2', 'HomeController@home2');
     Route::get('/cps/test','TestController@test');
     Route::get('/cps/name','TestController@name');
     Route::get('/cps/a','TestController@a');
@@ -39,10 +41,10 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/cps/c','TestController@c');
     Route::get('/jackcare', 'HomeController@jackcare');
     //后台
-    Route::get('/admin/login','Admin\AdminController@getLogin');
-    Route::post('/admin/login','Admin\AdminController@postLogin');
+    Route::get('/jackadmin/login','Admin\AdminController@getLogin');
+    Route::post('/jackadmin/login','Admin\AdminController@postLogin');
 
-    Route::group(['middleware' => 'admin','prefix' => 'admin'],function () {
+    Route::group(['middleware' => 'admin','prefix' => 'jackadmin'],function () {
         Route::get('/','Admin\AdminController@index')->name('admin');
         Route::get('/logout','Admin\AdminController@getLogout');
     });

@@ -15,7 +15,7 @@ class TestController extends Controller
     public function test(Request $request)
     {
         if(Auth::check()) {
-            $wuid = Auth::user()->branch_id;
+            $wuid = Auth::user()->id;
         } else {
             $wuid = 0;
         }
