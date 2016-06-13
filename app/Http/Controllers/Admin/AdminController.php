@@ -31,7 +31,7 @@ class AdminController extends Controller
     {
         $this->validate($request, ['email' => 'required', 'password' => 'required']);
         if (Auth::guard('admin')->attempt(['email' => $request['email'], 'password' => $request['password'], 'admin_id' => 1])) {
-            return redirect('/admin');
+            return redirect()->route('admin');
         } else {
             return back()->with('status','账号或密码错误。');
         }

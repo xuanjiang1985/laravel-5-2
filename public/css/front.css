@@ -1,9 +1,8 @@
-body {background-color: #d3d3d3;}
+body {background-color: #fafafa;}
 ul li {list-style: none;}
-#cps-login {height: 40px; background-color: black; font-size: 16px; position: relative;}
+#cps-login {height: 40px; background-color: black; font-size: 16px; position: relative; color: white;}
 #cps-login a {float: right; color: white; padding-top: 10px;padding-right: 15px;}
 #cps-logout {position: absolute;right: 0px;top: 40px;padding-left: 15px; border: 1px solid #cccccc; text-align: center;box-shadow: -2px 2px 6px #cccccc;}
 #cps-logout a {color: black;}
-#cps-nav {max-width: 1000px; margin: 0 auto; border-radius: 0;font-size: 18px; font-weight: bold; background-color: none;}
+#cps-nav {border-radius: 0;font-size: 18px; font-weight: bold; background-color: white;}
 #cps-logo {padding-bottom: 30px;}
-#nav-ul {margin-top: 30px;}

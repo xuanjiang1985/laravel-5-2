@@ -15,7 +15,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">后台登陆</div>
                 <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ url('/admin/login') }}">
+                    <form class="form-horizontal" role="form" method="post" action="{{ url('/jackadmin/login') }}">
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
