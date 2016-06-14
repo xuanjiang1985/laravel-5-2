@@ -4,14 +4,11 @@ ul li {list-style: none;}
 #cps-login a {float: right; color: white; padding-top: 10px;padding-right: 15px;}
 #cps-logout {position: absolute;right: 0px;top: 40px;padding-left: 15px; border: 1px solid #cccccc; text-align: center;box-shadow: -2px 2px 6px #cccccc;}
 #cps-logout a {color: black;}
-<<<<<<< HEAD
 #cps-nav {max-width: 1000px; margin: 0 auto; border-radius: 0;font-size: 18px; font-weight: bold; background-color: none;}
 #cps-logo {padding-bottom: 30px;}
 #nav-ul {margin-top: 30px;}
 .bg-white {background-color: white;}
 .img-bottom {height: auto; max-width: 100%;}
 .red-remind {color: red;}
-=======
 #cps-nav {border-radius: 0;font-size: 18px; font-weight: bold; background-color: white;}
 #cps-logo {padding-bottom: 30px;}
->>>>>>> 653225ee5ac6d7698baf3476226c24d7806a5d3c
