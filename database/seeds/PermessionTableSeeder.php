@@ -17,7 +17,7 @@ class PermessionTableSeeder extends Seeder
             $arr[] = $i;
         }
         $new = serialize($arr);
-        Permession::create(['user_id' => 1,
-                            'list_arr' => $new]);
+        Permession::create(['role_id' => 1,
+                            'role_permession' => $new]);
     }
 }
