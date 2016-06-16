@@ -11,7 +11,7 @@
     <br><br><br>
     <br><br><br>
     <br><br><br>
-    home1
+    {{ route('home.index')->getUri() }}
     <br><br><br>
     <br><br><br>
     <br><br><br>

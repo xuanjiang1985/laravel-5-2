@@ -14,8 +14,8 @@ class CreatePermessionsTable extends Migration
     {
         Schema::create('permessions', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('role_id');
-            $table->string('role_permession',1000);
+            $table->string('route_name',255)->unique();
+            $table->string('man_name',255);
             $table->timestamps();
         });
         Schema::create('roles', function (Blueprint $table) {
@@ -28,6 +28,13 @@ class CreatePermessionsTable extends Migration
             $table->increments('id');
             $table->integer('user_id');
             $table->integer('role_id');
+            $table->timestamps();
+        });
+
+        Schema::create('roles_permessions', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('role_id');
+            $table->integer('permession_id');
             $table->timestamps();
         });
     }
@@ -43,5 +50,6 @@ class CreatePermessionsTable extends Migration
         Schema::drop('permessions');
         Schema::drop('roles');
         Schema::drop('users_roles');
+        Schema::drop('roles_permessions');
     }
 }

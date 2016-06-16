@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Permession extends Model
 {
-    protected $fillable = ['user_id','list_arr'];
+    protected $fillable = ['route_name','man_name'];
 }

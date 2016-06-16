@@ -3,7 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\UserRole;
 
-class User_RoleTableSeeder extends Seeder
+class UserRoleTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,7 +12,6 @@ class User_RoleTableSeeder extends Seeder
      */
     public function run()
     {
-        UserRole::create(['user_id' => 1,
-                            'role_id' => 1]);
+        UserRole::create(['user_id' => 1, 'role_id' => 1]);
     }
 }

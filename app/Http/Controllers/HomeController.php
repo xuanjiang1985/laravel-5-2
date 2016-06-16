@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use Illuminate\Http\Request;
+use Route;
 
 class HomeController extends Controller
 {
@@ -32,13 +33,16 @@ class HomeController extends Controller
         return redirect('/')->withErrors('你没有权限');
     }
 
-    public function home1()
+    public function home1(Request $request)
     {
-        return view('home1');
+        //echo $request->url();
+        //echo Route::getCurrentRoute()->getUri();
+        //echo Route::getCurrentRoute()->getName();
+        dd(Route::getCurrentRoute()->getCompiled());
     }
 
     public function home2()
     {
-        return view('home2');
+        dd(Route::getCurrentRoute()->getName());
     }
 }

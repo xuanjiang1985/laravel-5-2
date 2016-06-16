@@ -32,7 +32,7 @@ Route::group(['middleware' => 'web'], function () {
     });
     Route::auth();
     Route::get('/home', 'HomeController@index');
-    Route::get('/home1', 'HomeController@home1');
+    Route::get('/home1', 'HomeController@home1')->name('home.index');
     Route::get('/home2', 'HomeController@home2');
     Route::get('/cps/test','TestController@test');
     Route::get('/cps/name','TestController@name');
