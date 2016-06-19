@@ -6,5 +6,6 @@
       <h3 class="text-center">欢迎后台管理系统</h3>
       
    </div>
+   @include('errors.success')
 </div>
 @endsection

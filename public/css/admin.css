@@ -24,3 +24,6 @@ ul li {list-style-type: none;}
 .img-bottom {height: auto; max-width: 100%;}
 .red-remind {color:red;}
 .sort {width: 80px;}
+.item {width: 50px;}
+.ul-permession {padding: 0}
+.ul-permession li {float: left; margin-right: 20px;}

@@ -14,6 +14,8 @@ class CreatePermessionsTable extends Migration
     {
         Schema::create('permessions', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('item_id');
+            $table->integer('sort_id');
             $table->string('route_name',255)->unique();
             $table->string('man_name',255);
             $table->timestamps();

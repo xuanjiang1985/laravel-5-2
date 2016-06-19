@@ -14,14 +14,8 @@ class TestController extends Controller
 {
     public function test(Request $request)
     {
-        if(Auth::check()) {
-            $wuid = Auth::user()->id;
-        } else {
-            $wuid = 0;
-        }
-        
-        view()->share('wuserid','?uid='.$wuid);
-        return view('test');
+        $id =  Session::getId();
+        dd(Session::all());
     }
 
     public function name()

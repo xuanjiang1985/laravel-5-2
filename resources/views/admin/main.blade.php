@@ -30,7 +30,7 @@
            </a>
            <ul class="dropdown-menu drop-width" role="menu" aria-labelledby="dropdownMenu1">
                 <li role="presentation">
-                 <a role="menuitem" tabindex="-1" href="#">个人设置</a>
+                 <a role="menuitem" tabindex="-1" href="{{ route('admin') }}/password">修改密码</a>
                 </li>
               <li role="presentation">
                  <a role="menuitem" tabindex="-1" href="{{ route('admin') }}/logout">退出登录</a>
@@ -48,12 +48,13 @@
             <aside class="aside">
               <ul class="aside-ul">
                   
-                      <li class="aside-ul-li">后台管理员管理<span class="icon-angle-left pull-right"></span>
+                      <li class="aside-ul-li" data-item="1">后台管理员及权限管理<span class="icon-angle-left pull-right"></span>
                           <ul class="aside-ul-2">                
-                                <li><a style="display:block;" href="#">所有管理员</a></li>    
+                                <li><a style="display:block;" href="{{ route('manager') }}">管理员管理</a></li>
+                                <li><a style="display:block;" href="{{ route('role') }}">权限组管理</a></li>   
                           </ul>
                       </li>
-                      <li class="aside-ul-li">后台权限管理<span class="icon-angle-left pull-right"></span>
+                      <li class="aside-ul-li" data-item="2">文章管理<span class="icon-angle-left pull-right"></span>
                           <ul class="aside-ul-2">
                                 <li><a style="display:block;" href="#">所有管理员</a></li> 
                           </ul>

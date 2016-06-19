@@ -1,11 +1,9 @@
-@extends('main')
-
-@section('title')
-<title>403</title>
-@endsection
-
+@extends('admin.main')
 @section('content')
-<div class="container alert alert-danger">
-    403! 无权访问。
+<div class="container">
+        <br><br>
+        <div class="alert alert-danger">无权访问！</div>
+        <br><br>
+   </div>
 </div>
 @endsection

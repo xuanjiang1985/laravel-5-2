@@ -20,14 +20,14 @@ $(document).ready(function () {
     });
         //内容导航条触发侧边栏打开
         $("aside").ready(function() {
+            var host = "http://" + window.location.host;
             var location = window.location.pathname;
             var data = location.substr(1);
             var data = data.split("/");
-            var data = data.slice(0,3);
-            var new_location = "/"+data[0]+"/"+data[1]+"/"+data[2];
-            $("aside a[href='"+ new_location +"']").trigger("click");
-            $("aside a[href='"+ new_location +"']").css("color","white");
-            });
+            var url = host + "/" + data[0] + "/" + data[1];
+            $("aside a[href='"+ url +"']").trigger("click");
+            $("aside a[href='"+ url +"']").css("color","white");
+        });
         //响应式弹窗-xs
             $("#xs-menu").click(function(){
                 if($("#aside-center").is(":hidden")){
