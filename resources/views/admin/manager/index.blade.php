@@ -8,6 +8,7 @@
     </div>
     <br>
     @include('errors.success')
+    @include('errors.errors')
     <div>
         <a href="{{ route('manager') }}/create" class="pull-right btn btn-primary"><span class="icon-plus"></span> 添加管理员</a>
     </div>
@@ -35,8 +36,8 @@
                     <span class="btn btn-primary disabled"><span class="icon-lock"></span> 锁定</span>
                     @else
                         <a href="{{ route('manager') }}/branch/{{ $manager->id }}" class="btn btn-primary"><span class="icon-group"></span> 分组</a>
-                        <a href="#" class="btn btn-primary"><span class="icon-edit"></span> 编辑</a>
-                        <a href="#" class="btn btn-danger"><span class="icon-trash"></span> 删除</a>
+                        <a href="{{ route('manager') }}/show/{{ $manager->id }}" class="btn btn-primary"><span class="icon-edit"></span> 编辑</a>
+                        <a href="javascript:;" class="btn btn-danger delete" data-link="{{ route('manager') }}/delete/{{ $manager->id }}"><span class="icon-trash"></span> 删除</a>
                     @endif
                 </td>
             </tr>
@@ -44,4 +45,16 @@
         </tbody>
     </table>
 </div>
+<script>
+$(function(){
+    //delete 
+    $(".delete").click(function(){
+        var name = $(this).parents("tr").children("td").first().text();
+        var link = $(this).attr("data-link");
+        if (confirm("确定要删除权限：" + name +"？")){
+            window.open(link,"_self");
+        };
+    });
+});
+</script>
 @endsection

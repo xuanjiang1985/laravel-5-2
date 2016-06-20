@@ -41,6 +41,47 @@ class ManagerController extends Controller
         return view('admin.manager.create');
     }
 
+    public function show($id)
+    {
+        $user = User::findOrFail($id);
+        return view('admin.manager.show', ['user' => $user]);
+    }
+
+    public function update(Request $request, $id)
+    {
+    
+        $find_users = User::where('email',$request->input('账户'))->get();
+        if (count($find_users) > 1) {
+            return back()->withErrors('该账户已存在');
+        }
+
+        if (count($find_users) == 1 && $find_users->first()->id != $id) {
+            return back()->withErrors('该账户已存在');
+        }
+
+        if ($request->input('密码') == '') {
+            $this->validate($request,['姓名' => 'required',
+                                    '账户' => 'required|email',
+                                    ]);
+            User::find($id)->update(['name' => $request->input('姓名'),
+                                    'email' => $request->input('账户'),
+                            ]);
+        } else {
+            $this->validate($request,['姓名' => 'required',
+                                    '账户' => 'required|email',
+                                    '密码' => 'required|min:8']);
+            User::find($id)->update(['name' => $request->input('姓名'),
+                                'email' => $request->input('账户'),
+                                'password' => Hash::make($request->input('密码')),
+                            ]);
+        }
+    
+        $ip = $_SERVER['REMOTE_ADDR'];
+        $user = Auth::guard('admin')->user();
+        Log::info('管理员 '.$user->email.' 修改后台管理用户, 其ID为 '.$id.' '.$ip);
+        return redirect()->route('manager')->withSuccess('编辑管理员成功。');
+    }
+
     public function store(Request $request)
     {
         $this->validate($request,['姓名' => 'required',
@@ -71,13 +112,36 @@ class ManagerController extends Controller
         if ($id == 1) {
             return abort(403);
         }
+        $user = Auth::guard('admin')->user();
+        $ip = $_SERVER['REMOTE_ADDR'];
+        if ($user->id == $id) {
+            return redirect()->route('manager')->withErrors('无法给自己分组！');
+        }
         if ($role_id == 0) {
             UserRole::where('user_id',$id)->delete();
+            Log::info('管理员 '.$user.' 分组了后台管理用户,id='.$id.' '.$ip);
             return redirect()->route('manager')->withSuccess('分组操作成功。');
         } else {
             UserRole::where('user_id',$id)->delete();
             UserRole::create(['user_id' => $id, 'role_id' => $role_id]);
+            Log::info('管理员 '.$user.' 分组了后台管理用户,id='.$id.' '.$ip);
             return redirect()->route('manager')->withSuccess('分组操作成功。');
         }
+    }
+
+    public function delete($id)
+    {
+        if ($id == 1) {
+            return redirect()->route('manager')->withErrors('无法删除系统指定的管理员！');
+        }
+        $find_user = User::findOrFail($id);
+        $ip = $_SERVER['REMOTE_ADDR'];
+        $user = Auth::guard('admin')->user();
+        if ($user->id == $id) {
+            return redirect()->route('manager')->withErrors('无法删除自己！');
+        }
+        Log::info('管理员 '.$user.' 删除了后台管理用户 '.$find_user.' '.$ip);
+        $find_user->delete();
+        return redirect()->route('manager')->withSuccess('添加管理员成功。');
     }
 }
