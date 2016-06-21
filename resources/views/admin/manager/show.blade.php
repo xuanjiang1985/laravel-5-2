@@ -1,6 +1,6 @@
 @extends('admin.main')
 @section('content')
-<div class="container">
+<div class="container1">
     <div>
         <span class="icon-map-marker"> 导航</span>
         <span class="icon-double-angle-right"></span>
@@ -10,6 +10,7 @@
         <span class="icon-double-angle-right"></span>
         <span>{{ $user->name }}</span>
     </div>
+    <br>
     <br>
     @include('errors.errors')
     <form class="form-horizontal" action="{{ route('manager.update',['id' => $user->id]) }}" method="post">

@@ -6,17 +6,14 @@ ul li {list-style-type: none;}
 .aside ul {padding-left: 0;margin: 0;}
 .aside-ul li {padding-top: 10px; padding-bottom: 10px; padding-left: 10px; padding-right: 10px; list-style-type: none; margin-left: 0;}
 .aside-ul li:hover {background-color: #292929; color: white; cursor: pointer;}
-.aside a {color: #b5b5b5;}
+.aside a {color: #b5b5b5; display: block;}
 .aside a:hover {color: white; text-decoration: none;}
 .aside a:link {text-decoration: none;}
 #header {height: 40px; line-height: 40px; padding-left: 5px; padding-right: 5px;}
 #header a {color: white;}
 #header ul a {color: black;}
 #index-padding {padding-left: 5px;padding-right: 5px;}
-.drop-width {min-width: auto;}
-.aside-ul-li {margin-bottom: 1px;}
-.aside-ul-2 {margin-top: 5px; display:none;}
-.aside-ul-2 {background-color: #404040;}
+.aside-ul-2 {margin-top: 5px; display:none;background-color: #404040;}
 .aside-ul-2 li:hover {background-color: #404040;}
 .navi-line {padding-bottom: 5px; margin-bottom: 5px;}
 #captcha img:hover {cursor: pointer;}

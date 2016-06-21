@@ -28,7 +28,7 @@
               {{ Auth::guard('admin')->user()->name }}
               <span class="icon-caret-down"></span>
            </a>
-           <ul class="dropdown-menu drop-width" role="menu" aria-labelledby="dropdownMenu1">
+           <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
                 <li role="presentation">
                  <a role="menuitem" tabindex="-1" href="{{ route('admin') }}/password">修改密码</a>
                 </li>
@@ -50,13 +50,13 @@
                   
                       <li class="aside-ul-li" data-item="1">后台管理员及权限管理<span class="icon-angle-left pull-right"></span>
                           <ul class="aside-ul-2">                
-                                <li><a style="display:block;" href="{{ route('manager') }}">管理员管理</a></li>
-                                <li><a style="display:block;" href="{{ route('role') }}">权限组管理</a></li>   
+                                <li><a href="{{ route('manager') }}"><span class="icon-caret-right"></span> 管理员管理</a></li>
+                                <li><a href="{{ route('role') }}"><span class="icon-caret-right"></span> 权限组管理</a></li>   
                           </ul>
                       </li>
                       <li class="aside-ul-li" data-item="2">文章管理<span class="icon-angle-left pull-right"></span>
                           <ul class="aside-ul-2">
-                                <li><a style="display:block;" href="#">所有管理员</a></li> 
+                                <li><a href="#"><span class="icon-caret-right"> 所有管理员</a></li> 
                           </ul>
                       </li>           
               </ul>

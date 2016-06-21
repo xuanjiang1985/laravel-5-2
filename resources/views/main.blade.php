@@ -20,11 +20,21 @@
     <header>
       <div id="cps-login">
         @if(Auth::check())
-        <a href="javascript:;" id="login-a"><span class="icon-user"></span> {{ Auth::user()->name }} <span class="icon-sort-down"></span></a>
-              <ul id="cps-logout" class="hidden">
-                <li><a href="/setting">个人设置</a></li>
-                <li><a href="/logout">退出登陆</a></li>
-              </ul>
+        <div class="dropdown pull-right">
+           <a href="javascript:;" class="dropdown-toggle" id="dropdownjack" data-toggle="dropdown">
+            <i class="icon-user"></i>
+              {{ Auth::user()->name }}
+              <span class="icon-caret-down"></span>
+           </a>
+           <ul class="dropdown-menu drop-width" role="menu" aria-labelledby="dropdownjack" id="ul-login">
+                <li role="presentation">
+                 <a role="menuitem" tabindex="-1" href="{{ url('/setting') }}">个人设置</a>
+                </li>
+              <li role="presentation">
+                 <a role="menuitem" tabindex="-1" href="{{ url('/logout') }}">退出登录</a>
+              </li>
+           </ul>
+        </div>
         @else
         <a href="javascript:;" id="login"><span class="icon-user"></span> 登陆</a>
         @endif

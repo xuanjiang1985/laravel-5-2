@@ -1,6 +1,6 @@
 @extends('admin.main')
 @section('content')
-<div class="container">
+<div class="container1">
     <div>
         <span class="icon-map-marker"> 导航</span>
         <span class="icon-double-angle-right"></span>
@@ -10,6 +10,7 @@
         <span class="icon-double-angle-right"></span>
         <span>管理员分组</span>
     </div>
+    <br>
     <br>
     @include('errors.errors')
     <form class="form-horizontal" action="{{ route('manager.branch',['id' => $manager->id]) }}" method="post">

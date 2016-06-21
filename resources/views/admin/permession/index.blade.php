@@ -1,6 +1,6 @@
 @extends('admin.main')
 @section('content')
-<div class="container">
+<div class="container1">
     <h4>permession center</h4>
     @include('errors.success')
     <div>

@@ -1,6 +1,6 @@
 @extends('admin.main')
 @section('content')
-<div class="container">
+<div class="container1">
     <h4>Edit permession</h4>
     @include('errors.errors')
     <form class="form-inline" method="post" action="{{ route('permession') }}/show/{{ $permession->id }}">

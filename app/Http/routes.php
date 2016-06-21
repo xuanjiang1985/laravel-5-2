@@ -30,6 +30,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/', function () {
     return view('index');
     });
+    Route::resource('wang','WangController');
     Route::auth();
     Route::get('/home', 'HomeController@index');
     Route::get('/home1', 'HomeController@home1')->name('home.index');

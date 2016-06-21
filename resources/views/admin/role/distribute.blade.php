@@ -1,6 +1,6 @@
 @extends('admin.main')
 @section('content')
-<div class="container">
+<div class="container1">
     <div>
         <span class="icon-map-marker"> 导航</span>
         <span class="icon-double-angle-right"></span>
@@ -11,6 +11,7 @@
         <span>分配权限</span>
     </div>
     <br>
+    <br>
     <form action="{{ route('role.distribute', ['id' => $role->id]) }}" method="post">
         {!! csrf_field() !!}
         <div class="panel panel-default">
@@ -18,7 +19,7 @@
               <h3 class="panel-title">
                  后台管理员及权限管理
                  <span class="btn btn-info btn-xs yes">全选</span>
-                 <span class="btn btn-info btn-xs no">全不选</span>
+                 <span class="btn btn-info btn-xs against">反选</span>
               </h3>
            </div>
            <div class="panel-body">
@@ -42,7 +43,7 @@ $(function(){
     $(".yes").click(function(){
         $(this).parent().parent().next().find("input[type='checkbox']").prop("checked",true);
     });
-    $(".no").click(function(){
+    $(".against").click(function(){
         $(this).parent().parent().next().find("input[type='checkbox']").prop("checked",false);
     });
 });
