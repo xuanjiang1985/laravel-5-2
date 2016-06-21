@@ -25,24 +25,11 @@ class HomeController extends Controller
      */
     public function index()
     {
+        return view('index');
+    }
+
+    public function home()
+    {
         return view('home');
-    }
-
-    public function jackcare()
-    {
-        return redirect('/')->withErrors('你没有权限');
-    }
-
-    public function home1(Request $request)
-    {
-        //echo $request->url();
-        //echo Route::getCurrentRoute()->getUri();
-        //echo Route::getCurrentRoute()->getName();
-        dd(Route::getCurrentRoute()->getCompiled());
-    }
-
-    public function home2()
-    {
-        dd(Route::getCurrentRoute()->getName());
     }
 }

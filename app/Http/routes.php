@@ -27,23 +27,13 @@ Route::get('/info', function () {
 */
 Route::group(['middleware' => 'web'], function () {
 
-    Route::get('/', function () {
-    return view('index');
-    });
-    Route::resource('wang','WangController');
+    Route::get('/', 'HomeController@index');
+    Route::get('/test', 'HomeController@test');
+    Route::get('/home', 'HomeController@home');
     Route::auth();
-    Route::get('/home', 'HomeController@index');
-    Route::get('/home1', 'HomeController@home1')->name('home.index');
-    Route::get('/home2', 'HomeController@home2');
-    Route::get('/cps/test','TestController@test');
-    Route::get('/cps/name','TestController@name');
-    Route::get('/cps/a','TestController@a');
-    Route::get('/cps/b','TestController@b');
-    Route::get('/cps/c','TestController@c');
-    Route::get('/jackcare', 'HomeController@jackcare');
-    //Auth 前台-登录成功
+    //Auth - 前台
     Route::group(['middleware' => 'auth'], function(){
-        Route::get('/home2', 'HomeController@home2');
+        //
     });
     //后台
     Route::get('/jackadmin/login','Admin\AdminController@getLogin');
