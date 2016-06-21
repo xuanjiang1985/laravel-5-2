@@ -10,7 +10,13 @@
     <div class="container">
         <br><br>
         <div class="alert alert-danger">404! 此页面不存在。</div>
-        <br><br>
+        <br>
+        <p>
+            <a href="{{ url('/') }}">返回首页</a>
+            <span>或者</span>
+            <a href="javascript:;" id="404-back">返回上页</a>
+        </p>
     </div>
+    <script src="{{ asset('/js/404.js') }}"></script>
 </body>
 </html>
