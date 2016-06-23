@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests;
 use Illuminate\Http\Request;
 use Route;
+use Session;
 
 class HomeController extends Controller
 {
@@ -30,6 +31,12 @@ class HomeController extends Controller
 
     public function home()
     {
+        return view('home');
+    }
+
+    public function test()
+    {
+        Session::flash('wang','you are wang ba');
         return view('home');
     }
 }
