@@ -25,15 +25,15 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
-<code>
-            Route::group(['middleware' => 'permession'], function(){
-            //管理员管理
+~php
+        Route::group(['middleware' => 'permession'], function(){
+            //manager
             Route::get('/manager','ManagerController@index')->name('manager');
             Route::post('/manager/store','ManagerController@store')->name('manager.store');
             Route::post('/manager/update/{id}','ManagerController@update')->name('manager.update');
             Route::get('/manager/delete/{id}','ManagerController@delete')->name('manager.delete');
             Route::post('/manager/branch/{id}/store','ManagerController@branchStore')->name('manager.branch');
-            //权限组
+            //role
             Route::get('/role','RoleController@index')->name('role');
             Route::post('/role/store','RoleController@store')->name('role.store');
             Route::post('/role/update/{id}','RoleController@update')->name('role.update');
@@ -41,4 +41,4 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
             Route::post('/role/distribute/store/{id}','RoleController@distributeStore')->name('role.distribute');
         });    
 
-</code>
+~
