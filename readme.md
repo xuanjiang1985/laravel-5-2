@@ -14,10 +14,17 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 # How to use (使用说明)
 
-please **composer install** firstly, after you clone these codes in your PC. <br>
+##please **composer install** firstly, after you clone these codes in your PC. (安装扩展包)
 
 ~~~
 composer install
+~~~
+
+## Create tables and db:seeder
+
+~~~
+php artisan migrate
+php artisan db:seeder
 ~~~
 
 ## The following is an Adminer account for super manager.(下面是后台超级管理员登陆)
