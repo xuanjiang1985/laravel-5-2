@@ -16,7 +16,8 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 ## The following is an Adminer account for super manager.(下面是后台超级管理员登陆)
 
-account: admin@admin.com
+url: http://localhost/jackadmin <br>
+account: admin@admin.com <br>
 password: 12345678
 
 ## Routes in the group of middleware permession mast have route name.(在权限中间件的路由必须有命名)
@@ -39,4 +40,4 @@ password: 12345678
 
 ## add permessions into table permessions, you can login /jackadmin/permession to add permessions. like the below photo (登陆此URL手动将权限添加进数据库)
 
-![](https://github.com/xuanjiang1985/laravel-5-2/master/public/images/permession.png)
+![](http://share.weiyun.com/2cdacd42ea186396168856b9dd6fb239)
