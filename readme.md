@@ -20,7 +20,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 composer install
 ~~~
 
-## Create tables and db:seeder
+## Create tables and db:seeder (自动创建数据表，植入数据)
 
 ~~~
 php artisan migrate
