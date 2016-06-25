@@ -38,6 +38,6 @@ password: 12345678
         });    
 ~~~
 
-## add permessions into table permessions, you can login /jackadmin/permession to add permessions. like the below photo (登陆此URL手动将权限添加进数据库)
+## add permessions into table permessions, you can login /jackadmin/permession to add permessions. like the below photo (登陆此URL手动将权限添加进数据库，如下图)
 
 ![](https://github.com/xuanjiang1985/laravel-5-2/raw/master/public/images/permession.png)
