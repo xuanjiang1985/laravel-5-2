@@ -36,7 +36,5 @@ class HomeController extends Controller
 
     public function test()
     {
-        Session::flash('wang','you are wang ba');
-        return view('home');
     }
 }
