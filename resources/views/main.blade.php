@@ -47,8 +47,8 @@
            <div>
             <br class="hidden-xs">
               <ul class="nav navbar-nav" id="nav-ul">
-                 <li><a href="/home1">供应商</a></li>
-                 <li><a href="/home2">新品图片</a></li>
+                 <li><a href="/home">供应商</a></li>
+                 <li><a href="/home1">新品图片</a></li>
                  <li><a href="#">叫外卖</a></li>
                  <li><a href="#">打卡</a></li>
                  <li><a href="#">美女</a></li>

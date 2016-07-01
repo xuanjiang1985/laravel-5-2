@@ -8,6 +8,6 @@ $(function(){
     });
     //returnUrl
     $("#login").click(function(){
-        window.open("/login?return=" + encodeURIComponent(window.location.href), "_self");
+        window.open("/login?returnUrl=" + encodeURIComponent(window.location.href), "_self");
     });
 });
