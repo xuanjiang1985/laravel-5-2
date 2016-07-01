@@ -33,7 +33,7 @@ url: http://localhost/jackadmin <br>
 account: admin@admin.com <br>
 password: 12345678
 
-## Routes in the group of middleware permession mast have route name.(在权限中间件的路由必须有命名)
+## Routes in the group of middleware permession must have route name.(在权限中间件的路由必须有命名)
 ~~~php
         Route::group(['middleware' => 'permession'], function(){
             //manager
